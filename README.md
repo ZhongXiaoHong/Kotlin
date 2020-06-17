@@ -117,15 +117,6 @@ CCCCCC
 
 """.trimIndent()//trimIndent 表示删除前置空格
 
-**转义**
-
-显示$999.99
-
-String  test = """
-
-${'$'}999.99
-
-""".trimIndent()
 
 > 空检查机制
 
@@ -298,6 +289,91 @@ ${'$'}999.99
   }
  
  }
+ 
+when(value){
+
+1,2,3,4,5,6-> print("1--6")
+
+else-> print("else")
+
+}
+
+> 循环写法
+
+for(i in  1..9){
+
+}
+
+var  items  = listOf(1,2,3,4,5,6)
+    
+    items.forEach { 
+        print(it)
+    }
+    
+  
+  **打印下标**
+     使用快捷： items.indices.for生成：
+     
+     
+    for (index in items.indices) {
+        
+    }
+      
+      
+    
+
+
+> 循环标签
+
+//在这里自定义标签zhong
+
+zhong@for(i in  1..9){
+
+    for(j in 1..9){
+    
+        if(j==5){
+        
+            break@zhong//直接跳出最外面循环
+        }
+    }
+}
+
+
+> 定义类
+
+class Person(id:Int){//主构造
+
+    //次构造   要包含主构造
+    constructor(id:Int,name:String):this(id){
+        
+    }
+
+    //次构造   要包含主构造
+    constructor():this(101){
+
+    }
+
+
+}
+
+> 类的继承实现
+
+class Student (id:Int):Person(id){//Person类能被继承要添加 open字段，类默认实public final的
+
+    //kotlin 变量全部是没有默认值的
+    //比如 var value:String 是会报错的
+    //如果初始值不想设置值要增加懒加载字段
+    lateinit var value:String
+
+    //lateinit修饰符只能修饰不可空类型，并且不允许修饰基础类型
+    //下面这么写报错
+    lateinit var t:Int
+
+}
+
+
+
+
  
  
  
