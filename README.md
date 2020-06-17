@@ -368,13 +368,103 @@ class Student (id:Int):Person(id){//Person类能被继承要添加 open字段，
     //lateinit修饰符只能修饰不可空类型，并且不允许修饰基础类型
     //下面这么写报错
     lateinit var t:Int
+}
 
+> 使用data编写Java Bean类
+
+
+```java
+package com.silang.cassloadertest
+
+data class User(val id:Int,val name:String)
+
+```
+相当于JAvA
+
+
+```java
+
+public final class User {
+   private final int id;
+   @NotNull
+   private final String name;
+
+   public final int getId() {
+      return this.id;
+   }
+
+   @NotNull
+   public final String getName() {
+      return this.name;
+   }
+
+   public User(int id, @NotNull String name) {
+      Intrinsics.checkParameterIsNotNull(name, "name");
+      super();
+      this.id = id;
+      this.name = name;
+   }
+
+   public final int component1() {
+      return this.id;
+   }
+
+   @NotNull
+   public final String component2() {
+      return this.name;
+   }
+
+   @NotNull
+   public final User copy(int id, @NotNull String name) {
+      Intrinsics.checkParameterIsNotNull(name, "name");
+      return new User(id, name);
+   }
+
+   // $FF: synthetic method
+   @NotNull
+   public static User copy$default(User var0, int var1, String var2, int var3, Object var4) {
+      if ((var3 & 1) != 0) {
+         var1 = var0.id;
+      }
+
+      if ((var3 & 2) != 0) {
+         var2 = var0.name;
+      }
+
+      return var0.copy(var1, var2);
+   }
+
+   @NotNull
+   public String toString() {
+      return "User(id=" + this.id + ", name=" + this.name + ")";
+   }
+
+   public int hashCode() {
+      int var10000 = this.id * 31;
+      String var10001 = this.name;
+      return var10000 + (var10001 != null ? var10001.hashCode() : 0);
+   }
+
+   public boolean equals(@Nullable Object var1) {
+      if (this != var1) {
+         if (var1 instanceof User) {
+            User var2 = (User)var1;
+            if (this.id == var2.id && Intrinsics.areEqual(this.name, var2.name)) {
+               return true;
+            }
+         }
+
+         return false;
+      } else {
+         return true;
+      }
+   }
 }
 
 
+```
 
-
- 
+ 40--00
  
  
  
