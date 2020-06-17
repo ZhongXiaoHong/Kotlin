@@ -138,6 +138,14 @@ ${'$'}999.99
     第一种：
     
     print(test?.length)//如果test为null,就不执行.legth
+    
+   **拓展**
+   
+   不想输出null做法：
+   
+   println(test?.length?:"dsds")
+    
+    
    
    第二种：
    
@@ -163,8 +171,144 @@ ${'$'}999.99
  return null
  }
  
- 46--23
+ > 区间
+ 
+ for(i int  1..9){
+ 
+ }
+ 
+ **设置步长**
+ 
+  for(i int  1..9 step 2){
+ 
+ }
+ 
+ **排除最后一个**
+ 
+   for(i int  1 until 9){//不会打印9
+ 
+ }
     
+ **降序要使用dowmTo** 
+ 
+ for(i int  9 downTo 1){
+ 
+ }
+ 
+ 
+ **使用区间作数值大小判断**
+ 
+ var value= 88;
+ 
+ //判断value 是不是在1到100区间内
+ 
+ if（value in 1..100）{
+ 
+ }
+ 
+ > 比较两个值
+ 
+ val  name1 = "A"
+ 
+  val  name2 = "B"
+ 
+ **比较值本身**
+ 
+ name1.equals(name2)//编译器不推荐使用
+ 
+ name1==name2
+ 
+ 
+ **比较对象地址**
+ 
+ name1===name2
+ 
+ 
+ > 数组定义
+ 
+ **第一种**
+ 
+ val nums[] = arrayOf(1,2,3,4,5,6)
+ 
+ 
+ **第二种**
+ 
+ val nums[] = Array(20,{value:Int->(value+10000)})
+ 
+ 
+ 
+ > 条件表达式
+ 
+ val num1 = 99999;
+ 
+ val num2 =1111;
+ 
+ **第1种**
+ 
+ val  max = if(num1 > num2)  num1 else num2
+ 
+ **第2种**
+ 
+ val max = if(num1 > num2){
+ 
+ //TODO 做很多其他逻辑
+ 
+ num1
+ }else{
+ 
+  //TODO 做很多其他逻辑
+  
+  num2
+ }
+ 
+ 
+ > switch 功能
+ 
+ val value = 1;
+ 
+ when(value){
+ 
+ in 1..3->print("1--3")
+ 
+  in 4..6->print("1--3")
+  
+  else  ->print("1--3")
+ 
+ }
+ 
+ 或者
+ when(value){
+ 
+ in 1..3->{
+ //TOdo  做其他逻辑
+ print("1--3")
+ 
+ }
+ 
+  in 4..6->{
+  
+  print("1--3")
+  
+  }
+  
+  else  ->{
+  
+  print("1--3")
+  
+  }
+ 
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
     
 
 
