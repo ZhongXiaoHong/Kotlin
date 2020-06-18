@@ -464,7 +464,69 @@ public final class User {
 
 ```
 
- 40--00
+```java
+
+    
+    var  user  = User(10086,"zxh")
+    //相当于定义两个变量，然后把user对应的属性赋值过去
+    val(myId,myName) = user.copy() 
+    print("id =$myId,name = $myName")
+    
+     //拒收id,只接受name
+    val(_,myName2) = user.copy()
+    print("name = $myName2")
+    
+```
+
+> 使用object实现单例
+
+```java
+//只实例化一次相当于单例
+object HttpManager{
+    
+    fun doSth(){
+        print("做点事儿")
+    }
+    
+}
+```
+![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/6182349.jpg)
+
+相当于Java
+
+```java
+import kotlin.Metadata;
+
+@Metadata(
+   mv = {1, 1, 13},
+   bv = {1, 0, 3},
+   k = 1,
+   d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\bÆ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J\u0006\u0010\u0003\u001a\u00020\u0004¨\u0006\u0005"},
+   d2 = {"Lcom/silang/cassloadertest/HttpManager;", "", "()V", "doSth", "", "app"}
+)
+public final class HttpManager {
+   public static final HttpManager INSTANCE;
+
+   public final void doSth() {
+      String var1 = "做点事儿";
+      boolean var2 = false;
+      System.out.print(var1);
+   }
+
+   private HttpManager() {
+   }
+
+   static {
+      HttpManager var0 = new HttpManager();
+      INSTANCE = var0;
+   }
+}
+
+```
+
+
+
+ 
  
  
  
