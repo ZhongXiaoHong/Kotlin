@@ -524,7 +524,7 @@ public final class HttpManager {
 
 ```
 
-> Kotlin中如何实现static的
+> Kotlin中使用派生操作实现static
 
 kotlin去除了static,实现静态效果要使用  companion object {}来实现
 
@@ -547,7 +547,10 @@ fun main(){
 
 ```
 
-> kotlin 实现静态内部类单例
+> kotlin 实现单例
+
+
+**静态内部类单例**
 
 ```java
 class HttpManager{
@@ -568,6 +571,36 @@ class HttpManager{
 
 ```
 ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/619019.jpg)
+
+> Kotlin的内部类
+
+```java
+
+class Test2{
+    
+    var  s = 100
+    
+    class A{//不是内部类，是嵌套类
+        fun a(){
+            print(s)//嵌套类不能访问s，会报错
+        }
+    }
+    
+    //加上了inner,说明是内部类，
+    inner class B{
+        
+        fun b(){
+            print(s)//内部类可以访问外部类的s
+        }
+        } 
+    }
+}
+```
+
+
+
+
+
 
  
  
