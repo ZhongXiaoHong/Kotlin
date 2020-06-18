@@ -524,7 +524,50 @@ public final class HttpManager {
 
 ```
 
+> Kotlin中如何实现static的
 
+kotlin去除了static,实现静态效果要使用  companion object {}来实现
+
+```java
+
+class Test{
+
+ //里面的元素相当于java中的元素再加上static
+    companion object {
+        var t = 100 //相当于java静态变量
+        fun test(){}//相当于java静态方法
+    }
+
+}
+
+fun main(){
+    Test.t
+    Test.test()
+}
+
+```
+
+> kotlin 实现静态内部类单例
+
+```java
+class HttpManager{
+    
+
+    object  Holder{
+      val   instance  = HttpManager()
+    }
+
+    companion object {
+    //Holder只实例化一次，所以instace相当于静态的，可以直接下面那样访问
+        fun getInstance():HttpManager =  Holder.instance 
+    }
+
+
+
+}
+
+```
+![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/619019.jpg)
 
  
  
