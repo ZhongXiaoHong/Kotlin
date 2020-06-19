@@ -1,0 +1,53 @@
+【注册】
+https://www.wanandroid.com/user/register
+Post
+username:luoxiaoling
+password:888168
+repassword:888168
+
+
+{
+    "data": {
+        "admin": false,
+        "chapterTops": [],
+        "collectIds": [],
+        "email": "",
+        "icon": "",
+        "id": 67653,
+        "nickname": "luoxiaoling",
+        "password": "",
+        "publicName": "luoxiaoling",
+        "token": "",
+        "type": 0,
+        "username": "luoxiaoling"
+    },
+    "errorCode": 0,
+    "errorMsg": ""
+}
+
+
+【登录】
+https://www.wanandroid.com/user/login
+Post
+username:luoxiaoling
+password:888168
+
+
+{
+    "data": {
+        "admin": false,
+        "chapterTops": [],
+        "collectIds": [],
+        "email": "",
+        "icon": "",
+        "id": 67653,
+        "nickname": "luoxiaoling",
+        "password": "",
+        "publicName": "luoxiaoling",
+        "token": "",
+        "type": 0,
+        "username": "luoxiaoling"
+    },
+    "errorCode": 0,
+    "errorMsg": ""
+}
