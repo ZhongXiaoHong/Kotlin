@@ -641,10 +641,26 @@ kotlin中以下用法会报错
  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621022.png)
  
  
+  > kotlin 调用java方法出现感叹号提示
+  
+   ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621037.png)
+  
+ 
+ 
  > Java in静态变量in在kotlin中使用冲突
  
  
  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621032.png)
+ 
+ 提示String可能为null,需要妥善处理
+ 
+ > kotlin 方法的形参是Java对象时如何传值
+ 
+  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621047.png)
+  
+ 
+ 
+ 
  
 
 
