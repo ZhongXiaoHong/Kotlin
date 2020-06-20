@@ -597,6 +597,41 @@ class Test2{
 }
 ```
 
+> kotlin的通配符 *  允许为null
+
+List<*>相当于Java List<?>
+
+val email: String?   允许为null
+
+> kotlin 智能识别set、get方法
+
+举例：
+
+```java
+
+when(view.id){//自动识别，调用get方法
+
+}
+
+when(view.id=100){//自动识别，调用set方法
+
+}
+
+```
+
+> 在kotlin中使用“Activity.this”
+
+kotlin中以下用法会报错
+
+ Toast.makeText(MainActivity.this,"登录成功",Toast.LENGTH_LONG).show()
+ 
+ 正确用法：
+ 
+ Toast.makeText(this@MainActivity,"登录成功",Toast.LENGTH_LONG).show()
+ 
+ 
+
+
 
 
 
