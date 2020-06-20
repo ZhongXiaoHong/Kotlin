@@ -4,7 +4,7 @@ import com.example.kotlindemo.bean.NetResult
 import io.reactivex.Observer
 import io.reactivex.disposables.Disposable
 
-abstract  class MyParseOperater<T> : Observer<NetResult<T>>{
+abstract  class MyParseOperator<T> : Observer<NetResult<T>>(){
 
     abstract  fun onSuccess(data:T)
 

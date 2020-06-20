@@ -78,7 +78,7 @@ fun main(){
     api.login("luoxiaoling","888168")
         .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(object : MyParseOperater<LoginResponse>() {
+        .subscribe(object : MyParseOperator<LoginResponse>() {
 
             override fun onSuccess(data: LoginResponse) {
 
