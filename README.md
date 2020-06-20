@@ -639,7 +639,12 @@ kotlin中以下用法会报错
  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621020.png)
    
  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621022.png)
-
+ 
+ 
+ > Java in静态变量in在kotlin中使用冲突
+ 
+ 
+ ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621032.png)
  
 
 
