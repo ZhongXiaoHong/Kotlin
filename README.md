@@ -629,6 +629,17 @@ kotlin中以下用法会报错
  
  Toast.makeText(this@MainActivity,"登录成功",Toast.LENGTH_LONG).show()
  
+ > kotlin 为类外方法自动生成宿主类
+ 
+ ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621015.jpg)
+ 
+  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621016.jpg)
+  
+  
+   ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621020.jpg)
+   
+   ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621022.jpg)
+
  
 
 
