@@ -21,12 +21,15 @@ class NetManager {
 
     companion object {
         fun getInstance(): NetManager = Holder.instance
+
+        fun <T> creatService(clazz:Class<T>):T{
+
+            return  getInstance().client!!.create(clazz)
+        }
+
     }
 
-    fun <T> creatService(clazz:Class<T>):T{
 
-       return  client!!.create(clazz)
-    }
 
 
 
@@ -65,31 +68,6 @@ class NetManager {
 
 
 fun main(){
-
-    NetManager.Builder().setBaseUrl("https://www.wanandroid.com").build()
-
-    var  api = NetManager.getInstance().creatService(Api::class.java)
-
-
-
-
-
-
-    api.login("luoxiaoling","888168")
-        .subscribeOn(Schedulers.io())
-        .observeOn(AndroidSchedulers.mainThread())
-        .subscribe(object : MyParseOperator<LoginResponse>() {
-
-            override fun onSuccess(data: LoginResponse) {
-
-                println("onsuccess = $data")
-            }
-
-            override fun onFailed(msg: String) {
-                println("onsuccess = $msg")
-            }
-
-        })
 
 
 
