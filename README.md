@@ -631,14 +631,14 @@ kotlin中以下用法会报错
  
  > kotlin 为类外方法自动生成宿主类
  
- ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621015.jpg)
+ ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621015.png)
  
-  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621016.jpg)
+ ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621016.png)
   
   
-   ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621020.jpg)
+ ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621020.png)
    
-   ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621022.jpg)
+ ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621022.png)
 
  
 
