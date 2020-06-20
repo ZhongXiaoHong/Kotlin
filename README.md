@@ -597,6 +597,73 @@ class Test2{
 }
 ```
 
+> kotlin的通配符 *  允许为null
+
+List<*>相当于Java List<?>
+
+val email: String?   允许为null
+
+> kotlin 智能识别set、get方法
+
+举例：
+
+```java
+
+when(view.id){//自动识别，调用get方法
+
+}
+
+when(view.id=100){//自动识别，调用set方法
+
+}
+
+```
+
+> 在kotlin中使用“Activity.this”
+
+kotlin中以下用法会报错
+
+ Toast.makeText(MainActivity.this,"登录成功",Toast.LENGTH_LONG).show()
+ 
+ 正确用法：
+ 
+ Toast.makeText(this@MainActivity,"登录成功",Toast.LENGTH_LONG).show()
+ 
+ > kotlin 为类外方法自动生成宿主类
+ 
+ ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621015.png)
+ 
+ ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621016.png)
+  
+  
+ ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621020.png)
+   
+ ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621022.png)
+ 
+ 
+  > kotlin 调用java方法出现感叹号提示
+  
+   ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621037.png)
+  
+ 
+ 
+ > Java in静态变量in在kotlin中使用冲突
+ 
+ 
+ ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621032.png)
+ 
+ 提示String可能为null,需要妥善处理
+ 
+ > kotlin 方法的形参是Java对象时如何传值
+ 
+  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621047.png)
+  
+ 
+ 
+ 
+ 
+
+
 
 
 
