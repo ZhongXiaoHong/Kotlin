@@ -9,25 +9,22 @@
 
     <EditText
         android:layout_margin="20dp"
-        android:id="@+id/nameEd"
+        android:id="@+id/nameEd2"
         android:layout_width="match_parent"
         android:layout_height="80dp"/>
 
     <EditText
         android:layout_margin="20dp"
-        android:id="@+id/pwEd"
+        android:id="@+id/pwdEd2"
         android:layout_width="match_parent"
         android:layout_height="80dp"/>
 
-
-
-
-    <Button
-        android:onClick="login"
+    <EditText
+        android:layout_margin="20dp"
+        android:id="@+id/repwEd2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:text="登录"
-      />
+        android:layout_height="80dp"/>
+
 
     <Button
         android:onClick="register"

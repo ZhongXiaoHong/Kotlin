@@ -129,167 +129,167 @@ CCCCCC
     第一种：
     
     print(test?.length)//如果test为null,就不执行.legth
-    
+
    **拓展**
-   
+
    不想输出null做法：
-   
+
    println(test?.length?:"dsds")
     
     
-   
+
    第二种：
-   
+
    print(test!!.length)//相当于不管空不空强制执行，为空会报错
-   
+
    第三种：
-   
+
    if(test!=null){
      print(test.length)
    }
-   
-  
+
+
 > 函数如何默认返回null
 
 比如以下函数使用：Int?,表示可以返回null
 
  fun method(name:String):Int?{
- 
+
  if(name = "A"){
  return 1
  }
- 
+
  return null
  }
- 
+
  > 区间
- 
+
  for(i int  1..9){
- 
+
  }
- 
+
  **设置步长**
- 
+
   for(i int  1..9 step 2){
- 
+
  }
- 
+
  **排除最后一个**
- 
+
    for(i int  1 until 9){//不会打印9
- 
+
  }
     
  **降序要使用dowmTo** 
- 
+
  for(i int  9 downTo 1){
- 
+
  }
- 
- 
+
+
  **使用区间作数值大小判断**
- 
+
  var value= 88;
- 
+
  //判断value 是不是在1到100区间内
- 
+
  if（value in 1..100）{
- 
+
  }
- 
+
  > 比较两个值
- 
+
  val  name1 = "A"
- 
+
   val  name2 = "B"
- 
+
  **比较值本身**
- 
+
  name1.equals(name2)//编译器不推荐使用
- 
+
  name1==name2
- 
- 
+
+
  **比较对象地址**
- 
+
  name1===name2
- 
- 
+
+
  > 数组定义
- 
+
  **第一种**
- 
+
  val nums[] = arrayOf(1,2,3,4,5,6)
- 
- 
+
+
  **第二种**
- 
+
  val nums[] = Array(20,{value:Int->(value+10000)})
+
  
- 
- 
+
  > 条件表达式
- 
+
  val num1 = 99999;
- 
+
  val num2 =1111;
- 
+
  **第1种**
- 
+
  val  max = if(num1 > num2)  num1 else num2
- 
+
  **第2种**
- 
+
  val max = if(num1 > num2){
- 
+
  //TODO 做很多其他逻辑
- 
+
  num1
  }else{
- 
+
   //TODO 做很多其他逻辑
-  
+
   num2
  }
- 
- 
+
+
  > switch 功能
- 
+
  val value = 1;
- 
+
  when(value){
- 
+
  in 1..3->print("1--3")
- 
+
   in 4..6->print("1--3")
-  
+
   else  ->print("1--3")
- 
+
  }
- 
+
  或者
  when(value){
- 
+
  in 1..3->{
  //TOdo  做其他逻辑
  print("1--3")
- 
+
  }
- 
+
   in 4..6->{
-  
+
   print("1--3")
-  
+
   }
-  
+
   else  ->{
-  
+
   print("1--3")
-  
+
   }
- 
+
  }
- 
+
 when(value){
 
 1,2,3,4,5,6-> print("1--6")
@@ -309,8 +309,9 @@ var  items  = listOf(1,2,3,4,5,6)
     items.forEach { 
         print(it)
     }
-    
+
   
+
   **打印下标**
      使用快捷： items.indices.for生成：
      
@@ -318,9 +319,10 @@ var  items  = listOf(1,2,3,4,5,6)
     for (index in items.indices) {
         
     }
-      
-      
-    
+
+
+​      
+​    
 
 
 > 循环标签
@@ -347,14 +349,32 @@ class Person(id:Int){//主构造
     constructor(id:Int,name:String):this(id){
         
     }
-
+    
     //次构造   要包含主构造
     constructor():this(101){
-
+    
     }
 
-
 }
+
+> 定义类的私有构造函数
+
+```
+class Test private constructor(var name:String) {
+
+    
+}
+
+相当于Java
+
+class Test  {
+    
+    private Test(String name)
+}
+
+```
+
+
 
 > 类的继承实现
 
@@ -364,7 +384,7 @@ class Student (id:Int):Person(id){//Person类能被继承要添加 open字段，
     //比如 var value:String 是会报错的
     //如果初始值不想设置值要增加懒加载字段
     lateinit var value:String
-
+    
     //lateinit修饰符只能修饰不可空类型，并且不允许修饰基础类型
     //下面这么写报错
     lateinit var t:Int
@@ -624,43 +644,66 @@ when(view.id=100){//自动识别，调用set方法
 kotlin中以下用法会报错
 
  Toast.makeText(MainActivity.this,"登录成功",Toast.LENGTH_LONG).show()
- 
+
  正确用法：
- 
+
  Toast.makeText(this@MainActivity,"登录成功",Toast.LENGTH_LONG).show()
- 
+
  > kotlin 为类外方法自动生成宿主类
- 
+
  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621015.png)
- 
+
  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621016.png)
-  
-  
+
+
  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621020.png)
-   
+
  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621022.png)
- 
- 
+
+
   > kotlin 调用java方法出现感叹号提示
-  
+
    ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621037.png)
-  
+
  
- 
+
  > Java in静态变量in在kotlin中使用冲突
- 
- 
+
+
  ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621032.png)
- 
+
  提示String可能为null,需要妥善处理
- 
+
  > kotlin 方法的形参是Java对象时如何传值
- 
+
   ![](https://github.com/ZhongXiaoHong/Kotlin/blob/master/621047.png)
-  
+
+
+
+> ```
+> kotlin接收java的东西，必须要用？允许为空
+> ```
+
+
+
+> kotlin 泛型限制
+
+```
+kotlin
+
+class Test<T> where T : Serializable,T:Runnable{
+
+
+}
+
+相当于java代码，表示同时时Serilizable和Runnable的子类
+public class Test2 <T extends Serializable & Runnable >{
+
+}
+```
+
  
- 
- 
+
  
 
 
@@ -669,18 +712,19 @@ kotlin中以下用法会报错
 
 
 
+
+
  
+
  
+
  
+
  
+
  
- 
- 
- 
- 
- 
- 
-    
+
+​    
 
 
 

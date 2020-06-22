@@ -9,4 +9,11 @@ public class JavaClient {
         return null;
     }
 
+    public static void main(String[] args) {
+        KotlinClient kotlinClient = new KotlinClient();
+        kotlinClient.test3();
+        KotlinClientKt.test4();
+
+    }
+
 }

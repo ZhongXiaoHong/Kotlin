@@ -2,7 +2,7 @@ package com.example.kotlindemo.mvp.view
 
 import com.example.kotlindemo.bean.LoginResponse
 
-interface ILoginView{
+interface ILoginView:IView{
 
     fun loginSuccess(data:LoginResponse)
 

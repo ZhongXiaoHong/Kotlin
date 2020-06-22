@@ -8,9 +8,26 @@ class KotlinClient {
 
     }
 
+    fun  `test3`(){
+
+    }
+
 
 }
 
+
+fun  `test4`(){
+
+}
+
+
+fun  `123456`(){
+
+}
+
+fun  test5(){
+
+}
 
 
 
