@@ -243,13 +243,18 @@ fun <T,R> T.justRun4(method:T.()->R){
 
 ```kotlin
 var a = 100
-a.justRun4(){
+
+a.justRun4(){//TODO （） 可以省略因为不用传参
+    
     //TODO 因为高阶函数被Int内化了，这里可以直接调用Int的成员方法compareTo
     compareTo(20)
     true
 }
+
 var b = GaoJieCore()
-b.justRun4(){
+
+b.justRun4(){ //TODO （） 可以省略因为不用传参
+    
     //TODO 因为高阶函数被GaoJieCore内化了，这里可以直接调用GaoJieCore的成员方法doSth
     doSth()
     10086
