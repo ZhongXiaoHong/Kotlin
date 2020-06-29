@@ -269,3 +269,17 @@ justRun4 10086
 
 
 
+> 扩展函数实战
+
+给Context增加toast函数
+
+```kotlin
+
+fun Context.toast(msg:String){
+    
+    Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
+}
+```
+
+这样在Activity、Fragment就可以直接调用toast方法了
+

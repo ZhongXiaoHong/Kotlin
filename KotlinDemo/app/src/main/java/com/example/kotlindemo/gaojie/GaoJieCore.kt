@@ -1,5 +1,8 @@
 package com.example.kotlindemo.gaojie
 
+import android.content.Context
+import android.widget.Toast
+
 
 fun main() {
 
@@ -63,6 +66,11 @@ fun <T,R> T.justRun2(param:R){
     println("justRun2$param")
 }
 
+
+fun Context.toast(msg:String){
+
+    Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
+}
 
 
 
