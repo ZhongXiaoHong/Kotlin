@@ -89,3 +89,178 @@ fun loginAction(name: String, pwd: String, method: Method) {
 
 
 
+> 为类增加扩展函数
+
+下面定义了GaoJieCore这个类，只定义了一个函数doSth
+
+```kotlin
+class  GaoJieCore{
+
+    fun doSth(){
+        println("GaoJieCore---dosth")
+    }
+}
+```
+
+为这个类增加一个扩展函数doAnotherSth：
+
+```kotlin
+
+fun GaoJieCore.doAnotherSth(){
+    println("GaoJieCore---doAnotherSth")
+}
+
+```
+
+那怎么使用呢：
+
+```kotlin
+fun main() {
+    //TODO 调用扩展函数和调用普通函数没什么区别
+    GaoJieCore().doAnotherSth()
+    GaoJieCore().doSth()
+   
+}
+//TODO 定义扩展函数
+fun GaoJieCore.doAnotherSth(){
+    println("GaoJieCore---doAnotherSth")
+}
+
+class  GaoJieCore{
+
+    fun doSth(){
+        println("GaoJieCore---dosth")
+    }
+}
+```
+
+**输出：**
+
+GaoJieCore---doAnotherSth
+GaoJieCore---dosth
+
+
+
+> 为泛型增加扩展函数
+
+```kotlin
+//TODO <T> 是对泛型的说明
+//TODO 以下代码是对T类型作扩展函数
+//TODO T类型没有作类型限制，没有规定上限下限，意味着它可以是任何类型
+
+fun <T> T.justRun(){
+    println("justrun")
+}
+```
+
+**调用**：
+
+```kotlin
+ 	var a = 100
+    a.justRun()
+    var b = GaoJieCore()
+    b.justRun()
+```
+
+**输出**：
+
+justrun
+justrun
+
+
+
+**如果泛型的扩展函数有参数呢？**如下：
+
+```kotlin
+//TODO 因为形参引入一个新的泛型R,所以要增加泛型说明<T,R>
+fun <T,R> T.justRun2(param:R){
+    println("justRun2 $param")
+}
+```
+
+**调用**：
+
+```kotlin
+    var a = 100
+    a.justRun2(a)
+    var b = GaoJieCore()
+    b.justRun2("GaoJieCore")
+```
+
+**输出**：
+
+justRun2 100
+justRun2 GaoJieCore
+
+
+
+**如果泛型扩展函数的形参是一个高阶函数呢？**😂😂😂
+
+```kotlin
+//TODO 注意形参是一个高阶函数,返回类型是泛型
+
+fun <T,R> T.justRun3(method:()->R){
+    println("justRun3 ${method()}")//TODO 这里调用高阶函数，打印返回值
+}
+```
+
+**调用**：
+
+```kotlin
+   var a = 100
+    a.justRun3(){
+        true//TODO 返回Boolean类型
+    }
+    var b = GaoJieCore()
+    b.justRun3(){
+        10086  //TODO  返回Int类型
+    }
+
+```
+
+**输出**：
+
+justRun3 true
+justRun3 10086
+
+
+
+**泛型扩展函数的形参是一个高阶函数**，**并且将高阶函数内化成泛型类的一个普通成员函数😂😂😂**
+
+怎么理解后半截这句“**高阶函数内化成泛型类的一个普通成员函数**”，意思就是本来这个高阶函数属于一个形参，不属于泛型类的成员，现在将这个“**高阶函数**”内化变成泛型类的一部分，即变成泛型类的成员方法，这样有什么好处？既然人家“**高阶函数**”内化变成泛型类的一部分，变成泛型类的成员方法，那么在**高阶函数**中就可以**直接访问泛型类的东西了哦！！！**
+
+```kotlin
+
+//TODO 注意T.()写法不在是写成（）
+//TODO T.()表示函数会被内化成T类的成员
+
+fun <T,R> T.justRun4(method:T.()->R){
+    println("justRun4 ${method()}")
+}
+```
+
+**调用**：
+
+```kotlin
+var a = 100
+a.justRun4(){
+    //TODO 因为高阶函数被Int内化了，这里可以直接调用Int的成员方法compareTo
+    compareTo(20)
+    true
+}
+var b = GaoJieCore()
+b.justRun4(){
+    //TODO 因为高阶函数被GaoJieCore内化了，这里可以直接调用GaoJieCore的成员方法doSth
+    doSth()
+    10086
+}
+```
+
+**输出**：
+
+justRun4 true
+GaoJieCore---dosth
+justRun4 10086
+
+
+
