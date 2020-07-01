@@ -137,6 +137,7 @@ class  GaoJieCore{
 **输出：**
 
 GaoJieCore---doAnotherSth
+
 GaoJieCore---dosth
 
 
@@ -190,6 +191,7 @@ fun <T,R> T.justRun2(param:R){
 **输出**：
 
 justRun2 100
+
 justRun2 GaoJieCore
 
 
@@ -221,6 +223,7 @@ fun <T,R> T.justRun3(method:()->R){
 **输出**：
 
 justRun3 true
+
 justRun3 10086
 
 
@@ -264,7 +267,9 @@ b.justRun4(){ //TODO （） 可以省略因为不用传参
 **输出**：
 
 justRun4 true
+
 GaoJieCore---dosth
+
 justRun4 10086
 
 
