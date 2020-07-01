@@ -1,13 +1,13 @@
 package com.example.kotlindemo.net
 
 import com.example.kotlindemo.api.Api
-import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.Retrofit
 import com.example.kotlindemo.bean.LoginResponse
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 
 
 //TODO 实现类似Java的静态内部类单例
