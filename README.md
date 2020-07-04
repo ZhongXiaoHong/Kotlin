@@ -312,6 +312,7 @@ var  items  = listOf(1,2,3,4,5,6)
 
   
 
+
   **打印下标**
      使用快捷： items.indices.for生成：
      
@@ -704,7 +705,12 @@ public class Test2 <T extends Serializable & Runnable >{
 
  
 
- 
+>  kotlin中的三目运算
+
+kotlin中不再有java中的三目运算格式，比如a>b?a:b 
+取而代之的是直接用if else模式
+
+**格式：if(a>b) a else b**
 
 
 
