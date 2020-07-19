@@ -1,4 +1,7 @@
+
+
 # Kotlin
+
 kotlin知识总结
 
 
@@ -311,6 +314,7 @@ var  items  = listOf(1,2,3,4,5,6)
     }
 
   
+
 
 
   **打印下标**
@@ -714,7 +718,39 @@ kotlin中不再有java中的三目运算格式，比如a>b?a:b
 
 
 
+> kotlin的init代码块
 
+```kotlin
+class TestInit() {
+
+    var isLoading =false
+
+    constructor(isLoading:Boolean):this(){
+        println("构造方法")
+    }
+    init {
+        println("init方法  --- 1")
+    }
+
+    init {
+        println("init方法  --- 2")
+    }
+}
+
+fun main() {
+    TestInit(true)
+}
+```
+
+查看生成的java代码可以知道，init代码块实际上是被放到构造函数的里面去执行了，而且是在构造函数的开头处,多个init则按照定义的先后顺序来插入到构造方法的头部
+
+![](image/7191716.png)
+
+**输出：**
+
+init方法  --- 1
+init方法  --- 2
+构造方法
 
 
 

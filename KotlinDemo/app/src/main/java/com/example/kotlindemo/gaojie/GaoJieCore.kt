@@ -33,22 +33,30 @@ fun main() {
 //    b.justRun3(){
 //        10086
 //    }
+//
+//    var a = 100
+//    a.justRun4(){
+//        compareTo(20)
+//        true
+//    }
+//    var b = GaoJieCore()
+//    b.justRun4(){
+//        doSth()
+//        10086
+//    }
 
-    var a = 100
-    a.justRun4(){
-        compareTo(20)
-        true
+    var name = "zxh"
+    name.myLet3 {
+        print("1111111111111111111111111")
     }
-    var b = GaoJieCore()
-    b.justRun4(){
-        doSth()
-        10086
-    }
-
 
 
 }
 
+fun <T,R> T.myLet3(mm:T.(str:String)->R):R{
+
+return mm("ddd");
+}
 fun <T,R> T.justRun4(method:T.()->R){
     println("justRun4 ${method()}")
 }
